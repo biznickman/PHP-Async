@@ -3,6 +3,8 @@ This is a single function that will assist you with making "asynchronous" calls 
 Keep in mind that this could fail at some point but I'm currently using this on a production server and it appears to be the most efficient way of making asynchronous calls based on everything I've looked at.  If you want to truly make asynchoronous calls you should probably use another language but since I've been using PHP forever it's much easier for me to toss this in when necessary :)
 
 Example call:
+<?php
 //Define the post variables that you want sent 
 $post_vars = array('var1' => 'val1' , 'var2' => 'val2' , ... , 'varN' => 'valN');
 curl_post_async('http://someurl.com/' , $post_vars);
+?>;
