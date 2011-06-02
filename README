@@ -7,4 +7,4 @@ Example call:
 //Define the post variables that you want sent 
 $post_vars = array('var1' => 'val1' , 'var2' => 'val2' , ... , 'varN' => 'valN');
 curl_post_async('http://someurl.com/' , $post_vars);
-?>;
+?>
