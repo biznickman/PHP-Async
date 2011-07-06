@@ -1,12 +1,7 @@
 <?php
 function curl_post_async($url, $params)
 {
-    foreach ($params as $key => &$val) {
-      if (is_array($val)) $val = implode(',', $val);
-        $post_params[] = $key.'='.urlencode($val);
-    }
-    $post_string = implode('&', $post_params);
-
+    $post_string = http_build_query($params);
     $parts=parse_url($url);
 
     $fp = fsockopen($parts['host'],
