@@ -1,11 +1,11 @@
 <?php
-function curl_post_async($url, $params)
+function curl_post_async($url, $params, $overridePort=80)
 {
     $post_string = http_build_query($params);
     $parts=parse_url($url);
 
     $fp = fsockopen($parts['host'],
-        isset($parts['port'])?$parts['port']:80,
+        isset($parts['port'])?$parts['port']:$overridePort,
         $errno, $errstr, 30);
 	
 	if(!$fp)
